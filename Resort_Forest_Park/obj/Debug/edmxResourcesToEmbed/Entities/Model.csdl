@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Forest_ParkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Code_Client" />
+    </Key>
+    <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Code_Client" Type="Int32" Nullable="false" />
+    <Property Name="Series" Type="Int32" />
+    <Property Name="Number" Type="Int32" />
+    <Property Name="Date_of_birth" Type="DateTime" Precision="3" />
+    <Property Name="Postal_code" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Client" FromRole="Client" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_Worker" Type="Int32" />
+    <Property Name="Time_Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Type_Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_LoginHistory_Worker" FromRole="LoginHistory" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Order_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date_of_creation" Type="DateTime" Precision="3" />
+    <Property Name="Order_time" Type="DateTime" Precision="3" />
+    <Property Name="Client_Code" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Closing_date" Type="DateTime" Precision="3" />
+    <Property Name="Rental_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
+    <NavigationProperty Name="OrderServices" Relationship="Self.FK_OrderServices_Order" FromRole="Order" ToRole="OrderServices" />
+  </EntityType>
+  <EntityType Name="OrderService">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_Order" Type="Int32" />
+    <Property Name="ID_Services" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderServices_Order" FromRole="OrderServices" ToRole="Order" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_OrderServices_Services" FromRole="OrderServices" ToRole="Services" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name_service" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Service_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" />
+    <NavigationProperty Name="OrderServices" Relationship="Self.FK_OrderServices_Services" FromRole="Services" ToRole="OrderServices" />
+  </EntityType>
+  <EntityType Name="TypeWorker">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK_Worker_TypeWorker" FromRole="TypeWorker" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Post" Type="Int32" />
+    <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LoginHistories" Relationship="Self.FK_LoginHistory_Worker" FromRole="Worker" ToRole="LoginHistory" />
+    <NavigationProperty Name="TypeWorker" Relationship="Self.FK_Worker_TypeWorker" FromRole="Worker" ToRole="TypeWorker" />
+  </EntityType>
+  <Association Name="FK_Order_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Code_Client" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Client_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginHistory_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+    <End Role="LoginHistory" Type="Self.LoginHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoginHistory">
+        <PropertyRef Name="ID_Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderServices_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrderServices" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderServices">
+        <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderServices_Services">
+    <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="OrderServices" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderServices">
+        <PropertyRef Name="ID_Services" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Worker_TypeWorker">
+    <End Role="TypeWorker" Type="Self.TypeWorker" Multiplicity="0..1" />
+    <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeWorker">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Worker">
+        <PropertyRef Name="Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Forest_ParkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="LoginHistories" EntityType="Self.LoginHistory" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderServices" EntityType="Self.OrderService" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="TypeWorkers" EntityType="Self.TypeWorker" />
+    <EntitySet Name="Workers" EntityType="Self.Worker" />
+    <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginHistory_Worker" Association="Self.FK_LoginHistory_Worker">
+      <End Role="Worker" EntitySet="Workers" />
+      <End Role="LoginHistory" EntitySet="LoginHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderServices_Order" Association="Self.FK_OrderServices_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderServices" EntitySet="OrderServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderServices_Services" Association="Self.FK_OrderServices_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="OrderServices" EntitySet="OrderServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Worker_TypeWorker" Association="Self.FK_Worker_TypeWorker">
+      <End Role="TypeWorker" EntitySet="TypeWorkers" />
+      <End Role="Worker" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
