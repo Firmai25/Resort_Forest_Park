@@ -15,28 +15,13 @@ using System.Windows.Shapes;
 namespace Resort_Forest_Park.WIndows.SellerWindows
 {
     /// <summary>
-    /// Логика взаимодействия для MainSellerWindow.xaml
+    /// Логика взаимодействия для AddUserWindow.xaml
     /// </summary>
-    public partial class MainSellerWindow : Window
+    public partial class AddUserWindow : Window
     {
-        public MainSellerWindow()
+        public AddUserWindow()
         {
             InitializeComponent();
-        }
-
-        private void AddUser_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddOrder_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

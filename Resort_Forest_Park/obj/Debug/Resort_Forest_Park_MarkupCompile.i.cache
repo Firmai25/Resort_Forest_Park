@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 B:\repos\Resort_Forest_Park\Resort_Forest_Park\App.xaml
-21400984090
+6-585979989
 2973112643
-17-940743009
+21-1403568146
 18836985889
-MainWindow.xaml;WIndows\SellerWindows\MainSellerWindow.xaml;
+MainWindow.xaml;WIndows\AdministratorWindows\MainAdminWindow.xaml;WIndows\SellerWindows\AddOrderWindow.xaml;WIndows\SellerWindows\AddUserWindow.xaml;WIndows\SellerWindows\MainSellerWindow.xaml;WIndows\ShiftSupervisorWindows\MainSupervisorWindow.xaml;
 
 True
 

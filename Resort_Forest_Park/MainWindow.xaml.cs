@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Resort_Forest_Park.Entities;
+using Resort_Forest_Park.WIndows.SellerWindows;
 
 namespace Resort_Forest_Park
 {
@@ -38,7 +39,9 @@ namespace Resort_Forest_Park
 
                         break;
                     case "Продавец":
-
+                        MainSellerWindow mainSellerWindow = new MainSellerWindow();
+                        mainSellerWindow.Show();
+                        Close();
                         break;
                     case "Старший смены":
 
