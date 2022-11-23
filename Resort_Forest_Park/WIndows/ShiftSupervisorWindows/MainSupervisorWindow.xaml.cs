@@ -23,5 +23,25 @@ namespace Resort_Forest_Park.WIndows.ShiftSupervisorWindows
         {
             InitializeComponent();
         }
+
+        private void Accept_the_goods_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

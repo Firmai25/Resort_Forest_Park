@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.SellerWindows"
         mc:Ignorable="d"
-        Title="AddUserWindow" Height="450" Width="800">
+        Title="AddUserWindow" Height="450" Width="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2" 
+                     Width="400">
+            <TextBlock Text="Фамилия"/>
+            <TextBox/>
+            <TextBlock Text="Имя"/>
+            <TextBox/>
+            <TextBlock Text="Отчество"/>
+            <TextBox/>
+            <TextBlock Text="Серия паспорта"/>
+            <TextBox/>
+            <TextBlock Text="Номер паспорта"/>
+            <TextBox/>
+            <TextBlock Text="Дата рождения"/>
+            <TextBox/>
+            <TextBlock Text="Почтовый индекс"/>
+            <TextBox/>
+            <TextBlock Text="Адресс"/>
+            <TextBox/>
+            <TextBlock Text="Email"/>
+            <TextBox/>
+            <TextBlock Text="Пароль"/>
+            <TextBox/>
+        </UniformGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Создать и создать заказ"/>
+            <Button Grid.Column="1"
+                    Content="Создать"/>
+        </Grid>
     </Grid>
 </Window>
