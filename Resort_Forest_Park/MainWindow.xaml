@@ -9,7 +9,7 @@
         Height="450" 
         Width="400"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="5*"/>

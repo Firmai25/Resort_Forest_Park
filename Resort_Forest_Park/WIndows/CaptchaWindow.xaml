@@ -1,0 +1,55 @@
+﻿<Window x:Class="Resort_Forest_Park.WIndows.CaptchaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resort_Forest_Park.WIndows"
+        mc:Ignorable="d"
+        Title="CaptchaWindow" 
+        Height="250" 
+        Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="Совершенно много попыток входа, "
+                   HorizontalAlignment="Center"/>
+            <TextBlock Text="для продолжения необходимо ввести капчу"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Поменять капчу"
+                    Height="40"
+                    Width="100"
+                    Click="UpdateCapt_Click"/>
+            <Image Grid.Column="1"
+                   x:Name="IgCapt"/>
+            <TextBlock Text="Введите капчу"
+                       Grid.Row="1"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     x:Name="TbTextCapt"
+                     Height="40"
+                     Width="190"/>
+        </Grid>
+        <Button Content="Проверить капчу"
+                Grid.Row="2"
+                Click="CheckCapt_Click"/>
+
+
+    </Grid>
+</Window>

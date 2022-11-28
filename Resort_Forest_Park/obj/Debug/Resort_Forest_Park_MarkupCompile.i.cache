@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 B:\repos\Resort_Forest_Park\Resort_Forest_Park\App.xaml
-91435021850
+101999656527
 2973112643
-242024368291
-18836985889
-MainWindow.xaml;WIndows\AdministratorWindows\HistotyLoginWindow.xaml;WIndows\AdministratorWindows\MainAdminWindow.xaml;WIndows\InfoUserWindow.xaml;WIndows\SellerWindows\AddOrderWindow.xaml;WIndows\SellerWindows\AddUserWindow.xaml;WIndows\SellerWindows\MainSellerWindow.xaml;WIndows\ShiftSupervisorWindows\AcceptTheGoodsWindow.xaml;WIndows\ShiftSupervisorWindows\MainSupervisorWindow.xaml;
+251978477454
+19491346480
+MainWindow.xaml;WIndows\AdministratorWindows\HistotyLoginWindow.xaml;WIndows\AdministratorWindows\MainAdminWindow.xaml;WIndows\CaptchaWindow.xaml;WIndows\InfoUserWindow.xaml;WIndows\SellerWindows\AddOrderWindow.xaml;WIndows\SellerWindows\AddUserWindow.xaml;WIndows\SellerWindows\MainSellerWindow.xaml;WIndows\ShiftSupervisorWindows\AcceptTheGoodsWindow.xaml;WIndows\ShiftSupervisorWindows\MainSupervisorWindow.xaml;
 
 True
 
