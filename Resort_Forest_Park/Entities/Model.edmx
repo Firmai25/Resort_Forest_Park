@@ -36,11 +36,11 @@
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Order_code" Type="nvarchar" MaxLength="255" />
-          <Property Name="Date_of_creation" Type="datetime" />
-          <Property Name="Order_time" Type="datetime" />
+          <Property Name="Date_of_creation" Type="date" />
+          <Property Name="Order_time" Type="time" Precision="0" />
           <Property Name="Client_Code" Type="int" />
           <Property Name="Status" Type="nvarchar" MaxLength="255" />
-          <Property Name="Closing_date" Type="datetime" />
+          <Property Name="Closing_date" Type="date" />
           <Property Name="Rental_time" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="OrderServices">
@@ -78,6 +78,7 @@
           <Property Name="Patronymic" Type="nvarchar" MaxLength="255" />
           <Property Name="Login" Type="nvarchar" MaxLength="255" />
           <Property Name="Password" Type="nvarchar" MaxLength="255" />
+          <Property Name="Photo" Type="image" />
         </EntityType>
         <Association Name="FK_LoginHistory_Worker">
           <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
@@ -206,11 +207,11 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Order_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Date_of_creation" Type="DateTime" Precision="3" />
-          <Property Name="Order_time" Type="DateTime" Precision="3" />
+          <Property Name="Date_of_creation" Type="DateTime" Precision="0" />
+          <Property Name="Order_time" Type="Time" Precision="0" />
           <Property Name="Client_Code" Type="Int32" />
           <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Closing_date" Type="DateTime" Precision="3" />
+          <Property Name="Closing_date" Type="DateTime" Precision="0" />
           <Property Name="Rental_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="OrderServices" Relationship="Self.FK_OrderServices_Order" FromRole="Order" ToRole="OrderServices" />
@@ -254,6 +255,7 @@
           <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="LoginHistories" Relationship="Self.FK_LoginHistory_Worker" FromRole="Worker" ToRole="LoginHistory" />
           <NavigationProperty Name="TypeWorker" Relationship="Self.FK_Worker_TypeWorker" FromRole="Worker" ToRole="TypeWorker" />
         </EntityType>
@@ -430,6 +432,7 @@
                 <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

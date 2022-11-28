@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.AdministratorWindows"
         mc:Ignorable="d"
-        Title="MainAdminWindow" Height="450" Width="800">
+        Title="MainAdminWindow" Height="450" Width="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Timer"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"/>
+        <Button Content="Сформировать отчёт"
+                Grid.Row="1"/>
+        <Button Content="Посмотреть история входа"
+                Grid.Row="3"/>
     </Grid>
 </Window>

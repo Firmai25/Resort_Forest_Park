@@ -23,7 +23,7 @@ namespace Resort_Forest_Park.Entities
         public int ID { get; set; }
         public string Order_code { get; set; }
         public Nullable<System.DateTime> Date_of_creation { get; set; }
-        public Nullable<System.DateTime> Order_time { get; set; }
+        public Nullable<System.TimeSpan> Order_time { get; set; }
         public Nullable<int> Client_Code { get; set; }
         public string Status { get; set; }
         public Nullable<System.DateTime> Closing_date { get; set; }

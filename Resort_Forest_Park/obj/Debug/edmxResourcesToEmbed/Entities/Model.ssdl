@@ -31,11 +31,11 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="Order_code" Type="nvarchar" MaxLength="255" />
-    <Property Name="Date_of_creation" Type="datetime" />
-    <Property Name="Order_time" Type="datetime" />
+    <Property Name="Date_of_creation" Type="date" />
+    <Property Name="Order_time" Type="time" Precision="0" />
     <Property Name="Client_Code" Type="int" />
     <Property Name="Status" Type="nvarchar" MaxLength="255" />
-    <Property Name="Closing_date" Type="datetime" />
+    <Property Name="Closing_date" Type="date" />
     <Property Name="Rental_time" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="OrderServices">
@@ -73,6 +73,7 @@
     <Property Name="Patronymic" Type="nvarchar" MaxLength="255" />
     <Property Name="Login" Type="nvarchar" MaxLength="255" />
     <Property Name="Password" Type="nvarchar" MaxLength="255" />
+    <Property Name="Photo" Type="image" />
   </EntityType>
   <Association Name="FK_LoginHistory_Worker">
     <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />

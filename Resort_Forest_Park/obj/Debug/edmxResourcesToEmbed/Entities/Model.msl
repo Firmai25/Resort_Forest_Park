@@ -79,6 +79,7 @@
           <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

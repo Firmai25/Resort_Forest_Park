@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.SellerWindows"
         mc:Ignorable="d"
-        Title="AddUserWindow" Height="450" Width="600">
+        Title="AddUserWindow" 
+        Height="450" 
+        Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -14,32 +16,32 @@
         <UniformGrid Columns="2" 
                      Width="400">
             <TextBlock Text="Фамилия"/>
-            <TextBox/>
+            <TextBox Text="{Binding Surname}"/>
             <TextBlock Text="Имя"/>
-            <TextBox/>
+            <TextBox Text="{Binding Name}"/>
             <TextBlock Text="Отчество"/>
-            <TextBox/>
+            <TextBox Text="{Binding Patronymic}"/>
             <TextBlock Text="Серия паспорта"/>
-            <TextBox/>
+            <TextBox Text="{Binding Series}"/>
             <TextBlock Text="Номер паспорта"/>
-            <TextBox/>
+            <TextBox Text="{Binding Number}"/>
             <TextBlock Text="Дата рождения"/>
-            <TextBox/>
+            <TextBox Text="{Binding Date_of_birth}"/>
             <TextBlock Text="Почтовый индекс"/>
-            <TextBox/>
+            <TextBox Text="{Binding Postal_code}"/>
             <TextBlock Text="Адресс"/>
-            <TextBox/>
+            <TextBox Text="{Binding Address}"/>
             <TextBlock Text="Email"/>
-            <TextBox/>
+            <TextBox Text="{Binding Email}"/>
             <TextBlock Text="Пароль"/>
-            <TextBox/>
+            <TextBox Text="{Binding password}"/>
         </UniformGrid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="Создать и создать заказ"/>
+            <Button Content="Создать и выбрать услуги"/>
             <Button Grid.Column="1"
                     Content="Создать"/>
         </Grid>

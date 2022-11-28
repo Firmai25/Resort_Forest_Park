@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Resort_Forest_Park.Entities;
 using Resort_Forest_Park.WIndows.SellerWindows;
+using Resort_Forest_Park.WIndows.ShiftSupervisorWindows;
+using Resort_Forest_Park.WIndows.AdministratorWindows;
 
 namespace Resort_Forest_Park
 {
@@ -30,13 +32,15 @@ namespace Resort_Forest_Park
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             Forest_ParkEntities db = new Forest_ParkEntities();
-            Worker worker = db.Workers.Where(b => b.Name == TbName.Text && b.Password == PbPassword.Password).FirstOrDefault();
+            Worker worker = db.Workers.Where(b => b.Login == TbName.Text && b.Password == PbPassword.Password).FirstOrDefault();
             if (worker != null)
             {
                 switch(worker.TypeWorker.Name)
                 {
                     case "Администратор":
-
+                        MainAdminWindow mainAdminWindow = new MainAdminWindow();
+                        mainAdminWindow.Show();
+                        Close();
                         break;
                     case "Продавец":
                         MainSellerWindow mainSellerWindow = new MainSellerWindow();
@@ -44,7 +48,9 @@ namespace Resort_Forest_Park
                         Close();
                         break;
                     case "Старший смены":
-
+                        MainSupervisorWindow mainSupervisorWindow = new MainSupervisorWindow();
+                        mainSupervisorWindow.Show();
+                        Close();
                         break;
                 }
             }
