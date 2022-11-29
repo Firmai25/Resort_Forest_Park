@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using Resort_Forest_Park.Entities;
 
 namespace Resort_Forest_Park.WIndows
 {
@@ -19,9 +21,21 @@ namespace Resort_Forest_Park.WIndows
     /// </summary>
     public partial class InfoUserWindow : Window
     {
-        public InfoUserWindow()
+        DispatcherTimer timer;
+
+        public InfoUserWindow(Worker worker)
         {
             InitializeComponent();
+            DataContext= worker;
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 0, 2);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

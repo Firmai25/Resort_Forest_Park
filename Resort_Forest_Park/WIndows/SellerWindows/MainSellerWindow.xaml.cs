@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Resort_Forest_Park.WIndows.SellerWindows
 {
@@ -19,9 +20,19 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
     /// </summary>
     public partial class MainSellerWindow : Window
     {
+        DispatcherTimer timer;
         public MainSellerWindow()
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            TbTimer.Text = DateTime.Now.ToString();
         }
 
         private void AddUser_Click(object sender, RoutedEventArgs e)
@@ -31,7 +42,8 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            AddOrderWindow addOrderWindow = new AddOrderWindow();
+            addOrderWindow.Show();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

@@ -19,17 +19,19 @@
                    FontSize="20"/>
         <ComboBox Height="40"
                   Width="200"
-                  DisplayMemberPath="Code_Client"/>
+                  DisplayMemberPath="Code_Client"
+                  x:Name="CbClient"/>
         <TextBlock Text="Выберите услуги"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Center"
                    FontSize="20"/>
         <ListView Grid.Row="1"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  x:Name="LvService">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <CheckBox Content="{Binding aaaaa}"/>
+                        <CheckBox Content="{Binding Name_service}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

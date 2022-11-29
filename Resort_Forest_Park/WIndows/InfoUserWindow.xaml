@@ -6,9 +6,57 @@
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows"
         mc:Ignorable="d"
         Title="InfoUserWindow" 
-        Height="450" 
-        Width="800">
+        Height="250" 
+        Width="400"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="{Binding Photo}"
+               Grid.Row="1"/>
+        <TextBlock Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="Добро пожаловать"
+                   FontSize="30"
+                   HorizontalAlignment="Center"/>
+        <UniformGrid Grid.Column="1"
+                     Grid.Row="1"
+                     Columns="2">
+            <TextBlock Text="Фамилия:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Surname}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            <TextBlock Text="Имя:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Name}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            <TextBlock Text="Отчество:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Patronymic}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            <TextBlock Text="Должность:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding TypeWorker.Name}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+        </UniformGrid>
     </Grid>
 </Window>

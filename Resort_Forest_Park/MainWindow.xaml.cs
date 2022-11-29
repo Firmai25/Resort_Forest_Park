@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Resort_Forest_Park.Entities;
+﻿using Resort_Forest_Park.Entities;
 using Resort_Forest_Park.WIndows;
+using Resort_Forest_Park.WIndows.AdministratorWindows;
 using Resort_Forest_Park.WIndows.SellerWindows;
 using Resort_Forest_Park.WIndows.ShiftSupervisorWindows;
-using Resort_Forest_Park.WIndows.AdministratorWindows;
+using System;
+using System.Linq;
+using System.Windows;
 
 namespace Resort_Forest_Park
 {
@@ -37,12 +26,15 @@ namespace Resort_Forest_Park
             if (worker != null)
             {
                 LoginHistory loginHistory = new LoginHistory();
-                    loginHistory.ID_Worker = worker.ID;
-                    loginHistory.Type_Login = "Успешно";
-                    loginHistory.Time_Login = DateTime.Now.ToString();
-                    db.LoginHistories.Add(loginHistory);
-                    db.SaveChanges();
-                switch(worker.TypeWorker.Name)
+                loginHistory.ID_Worker = worker.ID;
+                loginHistory.Type_Login = "Успешно";
+                loginHistory.Time_Login = DateTime.Now.ToString();
+                db.LoginHistories.Add(loginHistory);
+                db.SaveChanges();
+                InfoUserWindow infoUserWindow = new InfoUserWindow(worker);
+                infoUserWindow.Owner = this;
+                infoUserWindow.ShowDialog();
+                switch (worker.TypeWorker.Name)
                 {
 
                     case "Администратор":
@@ -76,10 +68,10 @@ namespace Resort_Forest_Park
                 }
                 MessageBox.Show("Вы ввели неправильные данные");
                 CountError++;
-                if(CountError> 2) 
+                if (CountError > 2)
                 {
                     CaptchaWindow captchaWindow = new CaptchaWindow();
-                    captchaWindow.Owner= this;
+                    captchaWindow.Owner = this;
                     captchaWindow.ShowDialog();
                     if (captchaWindow.Block == true)
                     {
