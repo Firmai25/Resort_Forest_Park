@@ -6,6 +6,7 @@ using Resort_Forest_Park.WIndows.ShiftSupervisorWindows;
 using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace Resort_Forest_Park
 {
@@ -14,6 +15,7 @@ namespace Resort_Forest_Park
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer;
         public MainWindow()
         {
             InitializeComponent();
@@ -76,9 +78,17 @@ namespace Resort_Forest_Park
                     if (captchaWindow.Block == true)
                     {
                         MainGrid.IsEnabled = false;
+                        timer = new DispatcherTimer();
+                        timer.Tick += new EventHandler(timer_Tick);
+                        timer.Interval = new TimeSpan(0, 0, 0, 5);
+                        timer.Start();
                     }
                 }
             }
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            MainGrid.IsEnabled = true;
         }
     }
 }

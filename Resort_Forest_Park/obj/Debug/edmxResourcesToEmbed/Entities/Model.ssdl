@@ -30,7 +30,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Order_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Order_code" Type="int" />
     <Property Name="Date_of_creation" Type="date" />
     <Property Name="Order_time" Type="time" Precision="0" />
     <Property Name="Client_Code" Type="int" />

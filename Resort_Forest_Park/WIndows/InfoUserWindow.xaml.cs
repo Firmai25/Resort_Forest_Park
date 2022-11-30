@@ -37,5 +37,10 @@ namespace Resort_Forest_Park.WIndows
         {
             Close();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            timer.Stop();
+        }
     }
 }
