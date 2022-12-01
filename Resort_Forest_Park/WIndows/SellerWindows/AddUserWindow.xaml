@@ -7,14 +7,25 @@
         mc:Ignorable="d"
         Title="AddUserWindow" 
         Height="450" 
-        Width="600">
+        Width="300">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <UniformGrid Columns="2" 
-                     Width="400">
+                     Width="300">
             <TextBlock Text="Фамилия"/>
             <TextBox Text="{Binding Surname}"/>
             <TextBlock Text="Имя"/>
@@ -22,13 +33,16 @@
             <TextBlock Text="Отчество"/>
             <TextBox Text="{Binding Patronymic}"/>
             <TextBlock Text="Серия паспорта"/>
-            <TextBox Text="{Binding Series}"/>
+            <TextBox Text="{Binding Series}"
+                     PreviewTextInput="textBox_PreviewTextInput"/>
             <TextBlock Text="Номер паспорта"/>
-            <TextBox Text="{Binding Number}"/>
+            <TextBox Text="{Binding Number}"
+                     PreviewTextInput="textBox_PreviewTextInput"/>
             <TextBlock Text="Дата рождения"/>
             <TextBox Text="{Binding Date_of_birth}"/>
             <TextBlock Text="Почтовый индекс"/>
-            <TextBox Text="{Binding Postal_code}"/>
+            <TextBox Text="{Binding Postal_code}"
+                     PreviewTextInput="textBox_PreviewTextInput"/>
             <TextBlock Text="Адресс"/>
             <TextBox Text="{Binding Address}"/>
             <TextBlock Text="Email"/>
@@ -38,12 +52,19 @@
         </UniformGrid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="Создать и выбрать услуги"/>
+            <Button Content="Создать и выбрать услуги"
+                    Height="40"
+                    Width="150"
+                    Click="CreateClientandService_Click"/>
             <Button Grid.Column="1"
-                    Content="Создать"/>
+                    Content="Создать"
+                    Height="40"
+                    Width="100"
+                    Margin="0,0,5,0"
+                    Click="CreateClient_Click"/>
         </Grid>
     </Grid>
 </Window>

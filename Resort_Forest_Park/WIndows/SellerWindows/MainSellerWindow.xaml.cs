@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resort_Forest_Park.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
     public partial class MainSellerWindow : Window
     {
         DispatcherTimer timer;
+        Forest_ParkEntities db = new Forest_ParkEntities();
         public MainSellerWindow()
         {
             InitializeComponent();
@@ -37,7 +39,8 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
 
         private void AddUser_Click(object sender, RoutedEventArgs e)
         {
-
+            AddUserWindow addUserWindow = new AddUserWindow(db);
+            addUserWindow.Show();
         }
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)

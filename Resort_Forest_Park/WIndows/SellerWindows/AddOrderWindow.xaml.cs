@@ -28,6 +28,14 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
             CbClient.ItemsSource = db.Clients.ToList();
             LvService.ItemsSource = db.Services.ToList();
         }
+
+        public AddOrderWindow(Client client)
+        {
+            InitializeComponent();
+            CbClient.ItemsSource = db.Clients.ToList();
+            CbClient.Text = client.Name;
+            LvService.ItemsSource = db.Services.ToList();
+        }
         string[] masStr = new string[0];
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -68,7 +76,30 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
                     {
                         int code = rnd.Next(10000000, 99999999);
                         Order searchOrder = db.Orders.Where(b => b.Order_code == code).FirstOrDefault();
+                        if(searchOrder == null)
+                        {
+                            tr = true;
+                            order.Order_code= code;
+                        }
                     }
+                    db.Orders.Add(order);
+                    db.SaveChanges();
+                    for (int i = 0; i< masStr.Length; i++)
+                    {
+                        Service service = db.Services.Where(b => b.Name_service== masStr[i]).FirstOrDefault();
+                        OrderService orderService = new OrderService()
+                        {
+                            ID_Order = order.ID,
+                            ID_Services= service.ID
+                        };
+                        db.OrderServices.Add(orderService);
+                        db.SaveChanges();
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Не выбрана не одна услуга");
                 }
             }
             else

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Resort_Forest_Park.Entities;
 
 namespace Resort_Forest_Park.WIndows.SellerWindows
 {
@@ -19,9 +20,103 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
     /// </summary>
     public partial class AddUserWindow : Window
     {
-        public AddUserWindow()
+        Forest_ParkEntities db;
+        public AddUserWindow(Forest_ParkEntities database)
         {
             InitializeComponent();
+            DataContext = new Client();
+            db = database;
+        }
+
+        private void CreateClientandService_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = (Client)DataContext;
+            if(CheckClient(client))
+            {
+                db.Clients.Add(client);
+                db.SaveChanges();
+                AddOrderWindow addOrderWindow = new AddOrderWindow(client);
+                addOrderWindow.Show();
+                Close();
+            }
+
+        }
+
+        private bool CheckClient(Client client)
+        {
+            string error = "";
+            if (client.Surname == "")
+            {
+                error += "Введите фамилию \n";
+            }
+            if (client.Name == "")
+            {
+                error += "Введите имя \n";
+            }
+            if (client.Patronymic == "")
+            {
+                error += "Введите отчество\n";
+            }
+            int ser = Convert.ToInt32(client.Series);
+            if (ser >= 1000 && ser <= 9999)
+            {
+                error += "Не правильно введёна серия\n";
+            }
+            int num = Convert.ToInt32(client.Number);
+            if (num >= 100000 && num <= 999999)
+            {
+                error += "Не правильно введён номер\n";
+            }
+            if (DateTime.TryParse(client.Date_of_birth.ToString(), out DateTime date))
+            {
+                error += "Не правильная дата";
+            }
+            int pos = Convert.ToInt32(client.Postal_code);
+            if (pos <= 9999)
+            {
+                error += "Не правильный почтовый индекс\n";
+            }
+            if (client.Address == "")
+            {
+                error += "Не введён адресс\n";
+            }
+            if (client.Email == "")
+            {
+                error += "Не введён email\n";
+            }
+            if (client.password == "")
+            {
+                error += "Не введён пароль\n";
+            }
+            if (error == "")
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(error);
+                return false;
+            }
+        }
+        private void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CreateClient_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = (Client)DataContext;
+            if (CheckClient(client))
+            {
+                db.Clients.Add(client);
+                db.SaveChanges();
+                Close();
+            }
         }
     }
+
+
 }
