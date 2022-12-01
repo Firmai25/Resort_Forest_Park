@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resort_Forest_Park.WIndows.ShiftSupervisorWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace Resort_Forest_Park.WIndows.AdministratorWindows
         public MainAdminWindow()
         {
             InitializeComponent();
+        }
+
+        private void HistoryLogin_Click(object sender, RoutedEventArgs e)
+        {
+            HistotyLoginWindow window = new HistotyLoginWindow();
+            window.Show();
         }
     }
 }

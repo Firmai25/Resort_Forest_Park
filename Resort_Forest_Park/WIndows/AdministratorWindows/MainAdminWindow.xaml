@@ -22,6 +22,7 @@
         <Button Content="Сформировать отчёт"
                 Grid.Row="1"/>
         <Button Content="Посмотреть история входа"
-                Grid.Row="3"/>
+                Grid.Row="3"
+                Click="HistoryLogin_Click"/>
     </Grid>
 </Window>

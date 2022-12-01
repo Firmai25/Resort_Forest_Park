@@ -11,14 +11,34 @@
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel Orientation="Horizontal">
+            <ComboBox HorizontalAlignment="Left"
+                  Width="200"
+                  Height="40"
+                  DisplayMemberPath="Login"
+                  x:Name="CmLogin"
+                  SelectionChanged="CmLogin_SelectionChanged"
+                      Margin="20,0,0,0"/>
+            <Button Content="Сбросить"
+                    Click="Clear_click"
+                    Margin="10,0,0,0"
+                    Height="40"/>
+        </StackPanel>
+        <Button HorizontalAlignment="Right"
+                Content="Вернуться"
+                Height="40"
+                Margin="0,0,10,0"/>
+        <DataGrid Grid.Row="1" 
+                  x:Name="DgHistory" 
+                  AutoGenerateColumns="False"
+                  ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Worker.Surname}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Worker.Name}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Worker.Patronymic}"/>
+                <DataGridTextColumn Header="Время" Binding="{Binding Time_Login}"/>
+                <DataGridTextColumn Header="Действие" Binding="{Binding Type_Login}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

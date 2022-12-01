@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resort_Forest_Park.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,34 @@ namespace Resort_Forest_Park.WIndows.AdministratorWindows
     /// </summary>
     public partial class HistotyLoginWindow : Window
     {
+        Forest_ParkEntities db = new Forest_ParkEntities();
         public HistotyLoginWindow()
         {
             InitializeComponent();
+            DgHistory.ItemsSource = db.LoginHistories.ToList();
+            CmLogin.ItemsSource = db.Workers.ToList();
+        }
+
+        private void CmLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            try
+            {
+                Worker worker = comboBox.SelectedItem as Worker;
+                DgHistory.ItemsSource = db.LoginHistories.Where(b => b.Worker.ID == worker.ID).ToList();
+            }
+            catch { 
+            }
+            
+
+
+
+        }
+
+        private void Clear_click(object sender, RoutedEventArgs e)
+        {
+            CmLogin.Text = "";
+            DgHistory.ItemsSource = db.LoginHistories.ToList();
         }
     }
 }
