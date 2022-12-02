@@ -122,6 +122,12 @@
     <Compile Include="WIndows\AdministratorWindows\MainAdminWindow.xaml.cs">
       <DependentUpon>MainAdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WIndows\AdministratorWindows\OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WIndows\AdministratorWindows\SelectOrderWindow.xaml.cs">
+      <DependentUpon>SelectOrderWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WIndows\CaptchaWindow.xaml.cs">
       <DependentUpon>CaptchaWindow.xaml</DependentUpon>
     </Compile>
@@ -160,6 +166,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WIndows\AdministratorWindows\MainAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WIndows\AdministratorWindows\OrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WIndows\AdministratorWindows\SelectOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

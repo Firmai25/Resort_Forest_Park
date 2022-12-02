@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.ShiftSupervisorWindows"
         mc:Ignorable="d"
-        Title="AcceptTheGoodsWindow" Height="450" Width="400">
+        Title="AcceptTheGoodsWindow"
+        Height="450" 
+        Width="400"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -40,6 +43,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button Grid.Row="2"
-                Content="Сохранить"/>
+                Content="Сохранить"
+                Click="Exit_Click"/>
     </Grid>
 </Window>

@@ -33,6 +33,18 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
             Client client = (Client)DataContext;
             if(CheckClient(client))
             {
+                Random random = new Random();
+                bool poisc = false;
+                while (poisc == false)
+                {
+                    int i = random.Next(10000000, 99999999);
+                    Client cl = db.Clients.Where(b => b.Code_Client== i).FirstOrDefault();
+                    if (client == null)
+                    {
+                        poisc= true;
+                        client.Code_Client = i;
+                    }
+                }
                 db.Clients.Add(client);
                 db.SaveChanges();
                 AddOrderWindow addOrderWindow = new AddOrderWindow(client);
@@ -58,16 +70,16 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
                 error += "Введите отчество\n";
             }
             int ser = Convert.ToInt32(client.Series);
-            if (ser >= 1000 && ser <= 9999)
+            if (ser <= 1000 || ser >= 9999)
             {
                 error += "Не правильно введёна серия\n";
             }
             int num = Convert.ToInt32(client.Number);
-            if (num >= 100000 && num <= 999999)
+            if (num <= 100000 || num >= 999999)
             {
                 error += "Не правильно введён номер\n";
             }
-            if (DateTime.TryParse(client.Date_of_birth.ToString(), out DateTime date))
+            if (client.Date_of_birth.ToString() == "")
             {
                 error += "Не правильная дата";
             }

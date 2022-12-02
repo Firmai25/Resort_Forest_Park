@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Resort_Forest_Park.Entities;
 using Resort_Forest_Park.WIndows.SellerWindows;
 
@@ -21,10 +22,20 @@ namespace Resort_Forest_Park.WIndows.ShiftSupervisorWindows
     /// </summary>
     public partial class MainSupervisorWindow : Window
     {
+        DispatcherTimer timer;
         Forest_ParkEntities db = new Forest_ParkEntities();
         public MainSupervisorWindow()
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            TbTimer.Text = DateTime.Now.ToString();
         }
 
         private void Accept_the_goods_click(object sender, RoutedEventArgs e)

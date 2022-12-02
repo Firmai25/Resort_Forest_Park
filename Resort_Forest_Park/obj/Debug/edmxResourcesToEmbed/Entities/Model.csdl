@@ -10,7 +10,7 @@
     <Property Name="Code_Client" Type="Int32" Nullable="false" />
     <Property Name="Series" Type="Int32" />
     <Property Name="Number" Type="Int32" />
-    <Property Name="Date_of_birth" Type="DateTime" Precision="3" />
+    <Property Name="Date_of_birth" Type="DateTime" Precision="0" />
     <Property Name="Postal_code" Type="Int32" />
     <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />

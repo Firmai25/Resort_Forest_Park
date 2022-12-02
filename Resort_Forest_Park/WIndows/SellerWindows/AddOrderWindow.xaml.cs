@@ -86,7 +86,8 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
                     db.SaveChanges();
                     for (int i = 0; i< masStr.Length; i++)
                     {
-                        Service service = db.Services.Where(b => b.Name_service== masStr[i]).FirstOrDefault();
+                        string ser = masStr[i];
+                        Service service = db.Services.Where(b => b.Name_service== ser).FirstOrDefault();
                         OrderService orderService = new OrderService()
                         {
                             ID_Order = order.ID,
@@ -94,6 +95,8 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
                         };
                         db.OrderServices.Add(orderService);
                         db.SaveChanges();
+                        MessageBox.Show("Заказ успешно создан");
+                        Close();
                     }
                     
                 }

@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.ShiftSupervisorWindows"
         mc:Ignorable="d"
-        Title="MainSupervisorWindow" Height="450" Width="400">
+        Title="MainSupervisorWindow" 
+        Height="450" 
+        Width="400"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -14,7 +17,8 @@
         <TextBlock Text="Timer"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="30"/>
+                   FontSize="30"
+                   x:Name="TbTimer"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>

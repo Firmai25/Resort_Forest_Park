@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.AdministratorWindows"
         mc:Ignorable="d"
-        Title="HistotyLoginWindow" Height="450" Width="800">
+        Title="HistotyLoginWindow" 
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -27,7 +30,8 @@
         <Button HorizontalAlignment="Right"
                 Content="Вернуться"
                 Height="40"
-                Margin="0,0,10,0"/>
+                Margin="0,0,10,0"
+                Click="Exit_Click"/>
         <DataGrid Grid.Row="1" 
                   x:Name="DgHistory" 
                   AutoGenerateColumns="False"

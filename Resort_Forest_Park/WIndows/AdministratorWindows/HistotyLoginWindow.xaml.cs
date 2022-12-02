@@ -49,5 +49,10 @@ namespace Resort_Forest_Park.WIndows.AdministratorWindows
             CmLogin.Text = "";
             DgHistory.ItemsSource = db.LoginHistories.ToList();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

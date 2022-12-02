@@ -59,5 +59,10 @@ namespace Resort_Forest_Park.WIndows.ShiftSupervisorWindows
 
             LvService.ItemsSource = que.ToList();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

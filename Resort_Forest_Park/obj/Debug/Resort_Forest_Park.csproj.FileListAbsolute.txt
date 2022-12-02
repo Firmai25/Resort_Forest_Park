@@ -39,3 +39,7 @@ B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\InfoUserWindow.
 B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\InfoUserWindow.baml
 B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\CaptchaWindow.g.cs
 B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\CaptchaWindow.baml
+B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\AdministratorWindows\OrderWindow.g.cs
+B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\AdministratorWindows\SelectOrderWindow.g.cs
+B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\AdministratorWindows\OrderWindow.baml
+B:\repos\Resort_Forest_Park\Resort_Forest_Park\obj\Debug\WIndows\AdministratorWindows\SelectOrderWindow.baml
