@@ -16,13 +16,16 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Service}"/>
+                        <TextBlock Text="{Binding Service}"
+                                   FontFamily="Comic Sans MS"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <Button Content="Ввернуться"
                 Grid.Row="1"
-                Click="Exit_click"/>
+                Click="Exit_click"
+                FontSize="20"
+                FontFamily="Comic Sans MS"/>
     </Grid>
 </Window>

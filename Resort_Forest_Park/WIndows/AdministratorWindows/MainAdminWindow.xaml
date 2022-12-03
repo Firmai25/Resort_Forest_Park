@@ -9,7 +9,15 @@
         Height="450" 
         Width="400"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="280"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF76E383">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -18,17 +26,21 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Border Background="#FF498C51"/>
         <TextBlock Text="Timer"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30"
-                   x:Name="TbTimer"/>
+                   x:Name="TbTimer"
+                   FontFamily="Comic Sans MS"/>
         <Button Content="Посмотреть все заказы"
                 Grid.Row="1"
                 Click="AllOrder_Click"/>
         <Button Content="Посмотреть история входа"
                 Grid.Row="3"
                 Click="HistoryLogin_Click"/>
+        <Border Background="#FF498C51"
+                Grid.Row="5"/>
         <Button Content="Выйти"
                 Grid.Row="5"
                 Click="Exit_Click"/>

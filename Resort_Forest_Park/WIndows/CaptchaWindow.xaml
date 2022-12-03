@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows"
         mc:Ignorable="d"
-        Title="CaptchaWindow" 
         Height="250" 
         Width="400"
         WindowStartupLocation="CenterOwner">
@@ -15,13 +14,18 @@
             <RowDefinition Height="3*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Border Background="#FF498C51"
+                Grid.ColumnSpan="3"/>
         <StackPanel>
             <TextBlock Text="Совершенно много попыток входа, "
-                   HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                       FontFamily="Comic Sans MS"/>
             <TextBlock Text="для продолжения необходимо ввести капчу"
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                       FontFamily="Comic Sans MS"/>
         </StackPanel>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1"
+              Background="#FF76E383">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -33,22 +37,30 @@
             <Button Content="Поменять капчу"
                     Height="40"
                     Width="100"
-                    Click="UpdateCapt_Click"/>
+                    Click="UpdateCapt_Click"
+                    FontFamily="Comic Sans MS"/>
             <Image Grid.Column="1"
                    x:Name="IgCapt"/>
             <TextBlock Text="Введите капчу"
                        Grid.Row="1"
                        HorizontalAlignment="Right"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"
+                       FontFamily="Comic Sans MS"/>
             <TextBox Grid.Row="1"
                      Grid.Column="1"
                      x:Name="TbTextCapt"
                      Height="40"
-                     Width="190"/>
+                     Width="190"
+                     FontFamily="Comic Sans MS"/>
         </Grid>
+        <Border Background="#FF498C51"
+                Grid.Row="2"/>
         <Button Content="Проверить капчу"
                 Grid.Row="2"
-                Click="CheckCapt_Click"/>
+                Click="CheckCapt_Click"
+                Height="40"
+                Width="150"
+                FontFamily="Comic Sans MS"/>
 
 
     </Grid>

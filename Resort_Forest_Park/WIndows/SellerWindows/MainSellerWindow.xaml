@@ -9,16 +9,18 @@
         Height="450" 
         Width="400"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#FF76E383">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Border Background="#FF498C51"/>
         <TextBlock Text="Timer"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30"
-                   x:Name="TbTimer"/>
+                   x:Name="TbTimer"
+                   FontFamily="Comic Sans MS"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -30,13 +32,27 @@
             </Grid.RowDefinitions>
             <Button Content="Добавить пользователя"
                     Grid.Row="1"
-                    Click="AddUser_Click"/>
+                    Click="AddUser_Click"
+                    Height="40"
+                    Width="250"
+                    FontFamily="Comic Sans MS"
+                    FontSize="20"/>
             <Button Content="Добавить заказ"
                     Grid.Row="3"
-                    Click="AddOrder_Click"/>
+                    Click="AddOrder_Click"
+                    Height="40"
+                    Width="250"
+                    FontFamily="Comic Sans MS"
+                    FontSize="20"/>
+            <Border Background="#FF498C51"
+                    Grid.Row="5"/>
             <Button Content="Выход"
                     Grid.Row="5"
-                    Click="Exit_Click"/>
+                    Click="Exit_Click"
+                    Height="40"
+                    Width="150"
+                    FontFamily="Comic Sans MS"
+                    FontSize="25"/>
         </Grid>
     </Grid>
 </Window>

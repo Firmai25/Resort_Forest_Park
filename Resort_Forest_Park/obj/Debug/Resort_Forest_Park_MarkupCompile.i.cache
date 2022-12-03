@@ -16,5 +16,5 @@ B:\repos\Resort_Forest_Park\Resort_Forest_Park\App.xaml
 19491346480
 MainWindow.xaml;WIndows\AdministratorWindows\HistotyLoginWindow.xaml;WIndows\AdministratorWindows\MainAdminWindow.xaml;WIndows\AdministratorWindows\OrderWindow.xaml;WIndows\AdministratorWindows\SelectOrderWindow.xaml;WIndows\CaptchaWindow.xaml;WIndows\InfoUserWindow.xaml;WIndows\SellerWindows\AddOrderWindow.xaml;WIndows\SellerWindows\AddUserWindow.xaml;WIndows\SellerWindows\MainSellerWindow.xaml;WIndows\ShiftSupervisorWindows\AcceptTheGoodsWindow.xaml;WIndows\ShiftSupervisorWindows\MainSupervisorWindow.xaml;
 
-True
+False
 

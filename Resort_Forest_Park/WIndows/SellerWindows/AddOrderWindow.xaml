@@ -13,19 +13,24 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
+        <Border Background="#FF76E383"
+                Grid.RowSpan="3"/>
         <TextBlock Text="Выберите клиента"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top"
                    Margin="0,5,0,0"
-                   FontSize="20"/>
+                   FontSize="20"
+                   FontFamily="Comic Sans MS"/>
         <ComboBox Height="40"
                   Width="200"
                   DisplayMemberPath="Code_Client"
-                  x:Name="CbClient"/>
+                  x:Name="CbClient"
+                   FontFamily="Comic Sans MS"/>
         <TextBlock Text="Выберите услуги"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Center"
-                   FontSize="20"/>
+                   FontSize="20"
+                   FontFamily="Comic Sans MS"/>
         <ListView Grid.Row="1"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   x:Name="LvService">
@@ -34,16 +39,20 @@
                     <StackPanel>
                         <CheckBox Content="{Binding Name_service}"
                                   Checked="CheckBox_Checked"
-                                  Unchecked="CheckBox_Unchecked"/>
+                                  Unchecked="CheckBox_Unchecked"
+                                  FontFamily="Comic Sans MS"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Border Background="#FF498C51"
+                Grid.Row="3"/>
         <Button Grid.Row="3"
                 Content="Создать заказ"
                 Click="CreateOrder_click"
                 Width="100"
-                Height="40"/>
+                Height="40"
+                FontFamily="Comic Sans MS"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -56,20 +65,23 @@
             <TextBlock Text="Введите время проката"
                        HorizontalAlignment="Center"
                        FontSize="16"
-                       Grid.ColumnSpan="2"/>
+                       Grid.ColumnSpan="2"
+                       FontFamily="Comic Sans MS"/>
             <ComboBox Grid.Row="1"
                       Grid.Column="1"
                       Width="100"
                       HorizontalAlignment="Left"
                       Margin="10,0,0,0"
-                      x:Name="CbTime">
+                      x:Name="CbTime"
+                      FontFamily="Comic Sans MS">
                 <TextBlock Text="Минут"/>
                 <TextBlock Text="Часов"/>
             </ComboBox>
             <TextBox Grid.Row="1"
                      Width="100"
                      HorizontalAlignment="Right"
-                     x:Name="TbTime"/>
+                     x:Name="TbTime"
+                     FontFamily="Comic Sans MS"/>
         </Grid>
     </Grid>
 </Window>

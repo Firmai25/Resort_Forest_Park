@@ -9,33 +9,37 @@
         Height="450" 
         Width="800"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#FF76E383">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <ComboBox HorizontalAlignment="Left"
-                  Width="200"
-                  Height="40"
-                  DisplayMemberPath="Login"
-                  x:Name="CmLogin"
-                  SelectionChanged="CmLogin_SelectionChanged"
-                      Margin="20,0,0,0"/>
+                      Width="200"
+                      Height="40"
+                      DisplayMemberPath="Login"
+                      x:Name="CmLogin"
+                      SelectionChanged="CmLogin_SelectionChanged"
+                      Margin="20,0,0,0"
+                      FontFamily="Comic Sans MS"/>
             <Button Content="Сбросить"
                     Click="Clear_click"
                     Margin="10,0,0,0"
-                    Height="40"/>
+                    Height="40"
+                    FontFamily="Comic Sans MS"/>
         </StackPanel>
         <Button HorizontalAlignment="Right"
-                Content="Вернуться"
+                Content="Вернуться "
                 Height="40"
                 Margin="0,0,10,0"
-                Click="Exit_Click"/>
+                Click="Exit_Click"
+                FontFamily="Comic Sans MS"/>
         <DataGrid Grid.Row="1" 
                   x:Name="DgHistory" 
                   AutoGenerateColumns="False"
-                  ColumnWidth="*">
+                  ColumnWidth="*"
+                  FontFamily="Comic Sans MS">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Worker.Surname}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Worker.Name}"/>

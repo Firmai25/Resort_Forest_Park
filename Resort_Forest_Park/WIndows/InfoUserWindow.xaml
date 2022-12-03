@@ -10,6 +10,11 @@
         Width="400"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -25,7 +30,8 @@
                    Grid.ColumnSpan="2"
                    Text="Добро пожаловать"
                    FontSize="30"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                   FontFamily="Comic Sans MS"/>
         <UniformGrid Grid.Column="1"
                      Grid.Row="1"
                      Columns="2">

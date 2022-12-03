@@ -6,21 +6,23 @@
         xmlns:local="clr-namespace:Resort_Forest_Park.WIndows.AdministratorWindows"
         mc:Ignorable="d"
         Title="OrderWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF76E383">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="Посмотреть Услуги заказа"
-                    HorizontalAlignment="Left"
-                    Margin="20,0,0,0"
+                HorizontalAlignment="Left"
+                Margin="20,0,0,0"
                 VerticalAlignment="Center"
                 Height="40"
-                Click="OrderSelect_Click"/>
+                Click="OrderSelect_Click"
+                FontFamily="Comic Sans MS"/>
         <DataGrid Grid.Row="1" 
                   x:Name="DgOrder" 
                   AutoGenerateColumns="False"
                   ColumnWidth="*"
+                  FontFamily="Comic Sans MS"
                   MouseDoubleClick="DgOrder_MouseDoubleClick"
                   IsReadOnly="True">
             

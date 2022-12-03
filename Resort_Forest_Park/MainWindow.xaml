@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="Аавторизации" 
         Height="450" 
         Width="400"
         WindowStartupLocation="CenterScreen">
@@ -20,8 +20,20 @@
             <RowDefinition Height="5*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Border Background="#FF498C51"
+                Grid.ColumnSpan="3"/>
+        <Border Background="#FF498C51"
+                Grid.RowSpan="3"/>
+        <Border Background="#FF498C51"
+                Grid.Row="2"
+                Grid.ColumnSpan="3"/>
+        <Border Background="#FF498C51"
+                Grid.Column="2"
+                Grid.RowSpan="3"/>
+        
         <Grid Grid.Row="1"
-              Grid.Column="1">
+              Grid.Column="1"
+              Background="#FF76E383">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -31,22 +43,35 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="Логин:"
-                       Grid.Row="1"/>
+                       Grid.Row="1"
+                       FontSize="20" 
+                       FontFamily="Comic Sans MS"/>
             <TextBox Grid.Row="2"
-                     Height="20"
-                     x:Name="TbName"/>
+                     Height="40"
+                     x:Name="TbName"
+                     FontSize="28"
+                     FontFamily="Comic Sans MS"/>
             <TextBlock Grid.Row="3"
-                       Text="Пароль:"/>
+                       Text="Пароль:"
+                       FontSize="20"
+                       FontFamily="Comic Sans MS"/>
             <PasswordBox Grid.Row="4"
-                         Height="20"
-                         x:Name="PbPassword"/>
+                         Height="40"
+                         x:Name="PbPassword"
+                         FontSize="28"
+                         FontFamily="Comic Sans MS"/>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Content="Войти"
-                        Click="Login_Click"/>
+                        Click="Login_Click"
+                        Grid.ColumnSpan="2"
+                        Height="40"
+                        Width="100"
+                        FontSize="20"
+                        FontFamily="Comic Sans MS"/>
             </Grid>
         </Grid>
     </Grid>
