@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resort_Forest_Park"
         mc:Ignorable="d"
-        Title="Аавторизации" 
+        Title="Авторизация" 
         Height="450" 
         Width="400"
         WindowStartupLocation="CenterScreen">

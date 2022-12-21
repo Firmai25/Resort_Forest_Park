@@ -30,11 +30,11 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Content="Добавить пользователя"
+            <Button Content="Зарегистрировать клиента"
                     Grid.Row="1"
                     Click="AddUser_Click"
                     Height="40"
-                    Width="250"
+                    Width="270"
                     FontFamily="Comic Sans MS"
                     FontSize="20"/>
             <Button Content="Добавить заказ"

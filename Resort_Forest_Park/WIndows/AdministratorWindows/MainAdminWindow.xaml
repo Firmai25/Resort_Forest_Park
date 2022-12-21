@@ -36,7 +36,7 @@
         <Button Content="Посмотреть все заказы"
                 Grid.Row="1"
                 Click="AllOrder_Click"/>
-        <Button Content="Посмотреть история входа"
+        <Button Content="Посмотреть историю входа"
                 Grid.Row="3"
                 Click="HistoryLogin_Click"/>
         <Border Background="#FF498C51"

@@ -26,32 +26,55 @@ namespace Resort_Forest_Park.WIndows.SellerWindows
         public MainSellerWindow()
         {
             InitializeComponent();
+            TbTimer.Text = $"{timeMin}:{timeSec}";
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, 0, 1);
             timer.Start();
         }
-
+        int timeSec = 59;
+        int timeMin = 9;
         private void timer_Tick(object sender, EventArgs e)
         {
-            TbTimer.Text = DateTime.Now.ToString();
+            if (timeSec == 0 && timeMin == 0)
+            {
+                timer.Stop();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+            else
+            {
+                if (timeSec == 0)
+                {
+                    timeMin--;
+                    timeSec = 60;
+                }
+                TbTimer.Text = $"{timeMin}:{timeSec}";
+                timeSec--;
+            }
+
         }
 
         private void AddUser_Click(object sender, RoutedEventArgs e)
         {
             AddUserWindow addUserWindow = new AddUserWindow(db);
-            addUserWindow.Show();
+            addUserWindow.Owner = this;
+            addUserWindow.ShowDialog();
         }
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {
             AddOrderWindow addOrderWindow = new AddOrderWindow();
-            addOrderWindow.Show();
+            addOrderWindow.ShowDialog();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            timer.Stop();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }

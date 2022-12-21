@@ -24,7 +24,8 @@ namespace Resort_Forest_Park
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             Forest_ParkEntities db = new Forest_ParkEntities();
-            Worker worker = db.Workers.Where(b => b.Login == TbName.Text && b.Password == PbPassword.Password).FirstOrDefault();
+            Worker worker = db.Workers.Where(b => b.Login == TbName.Text
+                            && b.Password == PbPassword.Password).FirstOrDefault();
             if (worker != null)
             {
                 LoginHistory loginHistory = new LoginHistory();
@@ -38,7 +39,6 @@ namespace Resort_Forest_Park
                 infoUserWindow.ShowDialog();
                 switch (worker.TypeWorker.Name)
                 {
-
                     case "Администратор":
                         MainAdminWindow mainAdminWindow = new MainAdminWindow();
                         mainAdminWindow.Show();
@@ -80,7 +80,7 @@ namespace Resort_Forest_Park
                         MainGrid.IsEnabled = false;
                         timer = new DispatcherTimer();
                         timer.Tick += new EventHandler(timer_Tick);
-                        timer.Interval = new TimeSpan(0, 0, 0, 5);
+                        timer.Interval = new TimeSpan(0, 0, 0, 10);
                         timer.Start();
                     }
                 }

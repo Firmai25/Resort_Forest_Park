@@ -29,13 +29,24 @@ namespace Resort_Forest_Park.WIndows.ShiftSupervisorWindows
             InitializeComponent();
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, 0, 1);
             timer.Start();
         }
-
+        int timeLogin = 1;
         private void timer_Tick(object sender, EventArgs e)
         {
-            TbTimer.Text = DateTime.Now.ToString();
+            if (timeLogin > 60)
+            {
+                timer.Stop();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+            else
+            {
+                TbTimer.Text = $"{60 - timeLogin}";
+                timeLogin++;
+            }
         }
 
         private void Accept_the_goods_click(object sender, RoutedEventArgs e)
